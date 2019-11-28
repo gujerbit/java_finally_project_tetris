@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="onlineMultiPlayPage" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover; -fx-background-position: center center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.OnlineMultiPlayController">
+   <children>
+      <Canvas fx:id="copyCanvas" height="470.4" layoutX="1022.0" layoutY="322.0" width="200.0" />
+      <Pane layoutX="44.0" layoutY="118.0" prefHeight="300.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #353535, #ffffff); -fx-background-radius: 47px; -fx-border-width: 10px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 40px;">
+         <children>
+            <Label alignment="CENTER" layoutX="-16.0" layoutY="14.0" prefHeight="50.0" prefWidth="300.0" text="HOLD" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Pane layoutX="34.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(25,25,25); -fx-background-radius: 20px;">
+               <children>
+                  <Canvas fx:id="holdCanvas" height="200.0" width="200.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="982.0" layoutY="111.0" prefHeight="300.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #353535, #ffffff); -fx-background-radius: 47px; -fx-border-width: 10px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 40px;">
+         <children>
+            <Label alignment="CENTER" layoutX="-16.0" layoutY="14.0" prefHeight="50.0" prefWidth="300.0" text="NEXT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Pane layoutX="34.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(25,25,25); -fx-background-radius: 20px;">
+               <children>
+                  <Canvas fx:id="nextCanvas" height="200.0" width="200.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="44.0" layoutY="521.0" prefHeight="156.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #353535, #ffffff); -fx-background-radius: 47px; -fx-border-width: 10px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 40px;">
+         <children>
+            <Label alignment="CENTER" layoutX="-16.0" layoutY="14.0" prefHeight="50.0" prefWidth="300.0" text="SCORE" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Pane layoutX="34.0" layoutY="64.0" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: rgb(25,25,25); -fx-background-radius: 20px;">
+               <children>
+                  <Label fx:id="lblScore" alignment="CENTER" layoutY="8.0" prefHeight="50.0" prefWidth="200.0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Canvas fx:id="canvas" height="697.0" layoutX="500.0" layoutY="-10.0" width="292.0" />
+      <Pane layoutX="495.0" layoutY="108.0" prefHeight="581.0" prefWidth="301.0" style="-fx-border-color: rgb(0,0,0); -fx-border-width: 8px; -fx-border-radius: 10px;" />
+      <Label fx:id="player1lbl" alignment="CENTER" prefHeight="108.0" prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" text="USER">
+         <font>
+            <Font name="HCR Dotum Bold" size="76.0" />
+         </font>
+      </Label>
+      <Label fx:id="player2lbl" alignment="CENTER" layoutX="700.0" prefHeight="108.0" prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" text="USER">
+         <font>
+            <Font name="HCR Dotum Bold" size="76.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="590.0" layoutY="-1.0" prefHeight="108.0" prefWidth="115.0" style="-fx-background-color: rgb(255,255,255);" text="VS">
+         <font>
+            <Font name="Arial Bold" size="66.0" />
+         </font>
+      </Label>
+      <Label fx:id="readyLabel" alignment="CENTER" prefHeight="800.0" prefWidth="1300.0" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="96.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

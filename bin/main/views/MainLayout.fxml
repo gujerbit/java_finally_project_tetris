@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#closeProfile" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: rgb(255,255,255); -fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MainController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button alignment="CENTER" layoutX="664.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#openProfile" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="400.0" style="-fx-background-color: #fa4dd5;" styleClass="mainbtn" text="MY PROFILE" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button alignment="CENTER" layoutX="670.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#openSinglePlayGame" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="400.0" style="-fx-background-color: #dd7128;" styleClass="mainbtn" text="SINGLE PLAY" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button alignment="CENTER" layoutX="670.0" layoutY="251.0" mnemonicParsing="false" onMouseClicked="#openOfflineMultiPlayGame" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="445.0" style="-fx-background-color: #f9fc4c;" styleClass="mainbtn" text="MULTI PLAY" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button alignment="CENTER" layoutX="737.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#online" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="378.0" style="-fx-background-color: #30ae38;" styleClass="mainbtn" text="ONLINE PLAY" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button alignment="CENTER" layoutX="670.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#openOptionPage" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="445.0" style="-fx-background-color: #60bdfc;" styleClass="mainbtn" text="OPTION" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Pane layoutX="235.0" layoutY="98.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: rgb(195,79,79); -fx-background-radius: 300px; -fx-border-width: 20px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 300px;">
+               <children>
+                  <Label fx:id="mainLabel" layoutX="53.0" layoutY="216.0" prefHeight="138.0" prefWidth="445.0" text="TETRIS" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="120.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="host" layoutX="80.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#openServer" onMouseEntered="#btnHover" prefHeight="110.0" prefWidth="391.0" style="-fx-background-color: rgba(0,0,0,0);" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="68.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="regbtn" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="enter" layoutX="80.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#serverEnter" onMouseEntered="#btnHover" prefHeight="110.0" prefWidth="391.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="btn" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="68.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow height="41.76" radius="18.8975" width="35.83" />
+               </effect>
+            </Pane>
+            <Pane layoutX="1045.0" layoutY="62.0" prefHeight="171.0" prefWidth="76.0" rotate="-18.4" style="-fx-background-color: rgb(255,255,255);" />
+            <Pane layoutX="1080.0" layoutY="165.0" prefHeight="164.0" prefWidth="70.0" rotate="-8.1" style="-fx-background-color: rgb(255,255,255);" />
+            <Pane layoutX="1091.0" layoutY="254.0" prefHeight="164.0" prefWidth="70.0" style="-fx-background-color: rgb(255,255,255);" />
+            <Pane layoutX="1076.0" layoutY="417.0" prefHeight="164.0" prefWidth="70.0" rotate="8.1" style="-fx-background-color: rgb(255,255,255);" />
+            <Pane layoutX="1053.0" layoutY="506.0" prefHeight="103.0" prefWidth="60.0" rotate="18.4" style="-fx-background-color: rgb(255,255,255);" />
+            <Pane fx:id="profileBox" opacity="0.0" prefHeight="800.0" prefWidth="350.0" style="-fx-background-color: rgba(0,0,0,0.6);">
+               <children>
+                  <Canvas height="172.0" layoutX="76.0" layoutY="23.0" width="186.0" />
+                  <Label layoutX="28.0" layoutY="286.0" text="이름 : " textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel" layoutX="134.0" layoutY="286.0" prefHeight="49.0" prefWidth="198.0" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="218.0" prefWidth="70.0" text=" ID :" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="IDLabel" layoutX="108.0" layoutY="218.0" prefHeight="49.0" prefWidth="218.0" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="profilebtn" layoutX="53.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#openProfilePage" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="btn" text="프로필 수정" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="35.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="53.0" layoutY="637.0" mnemonicParsing="false" onMouseClicked="#openRangking" onMouseEntered="#btnHover" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="btn" text="랭킹" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="35.0" />
+                     </font>
+                  </Button>
+                  <Button id="logout" fx:id="logoutbtn" layoutX="84.0" layoutY="712.0" mnemonicParsing="false" onMouseClicked="#openLoginPage" onMouseEntered="#btnHover" style="-fx-background-color: rgba(0,0,0,0);" text="로그아웃" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="35.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="6.0" layoutY="779.0" text="0.0.5" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

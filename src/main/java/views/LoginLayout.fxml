@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginPage" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.LoginController">
+   <children>
+      <Label alignment="CENTER" layoutX="394.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="T" textFill="#c34f4f">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Pane layoutX="412.0" layoutY="265.0" prefHeight="419.0" prefWidth="477.0" style="-fx-background-color: rgba(40,40,40,0.8); -fx-background-radius: 20px;">
+         <children>
+            <TextField fx:id="txtId" layoutX="39.0" layoutY="61.0" onAction="#loginProcess" prefHeight="35.0" prefWidth="400.0" />
+            <PasswordField fx:id="passField" layoutX="39.0" layoutY="145.0" onAction="#loginProcess" prefHeight="35.0" prefWidth="400.0" />
+            <Label layoutX="39.0" layoutY="120.0" prefHeight="25.0" prefWidth="139.0" text="비밀번호" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="36.0" prefHeight="25.0" prefWidth="139.0" text="계정이름" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="175.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#loginProcess" onMouseEntered="#hoverSound" prefHeight="42.0" prefWidth="128.0" style="-fx-background-radius: 30px;" text="로그인">
+               <font>
+                  <Font name="HCR Dotum Bold" size="25.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="164.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#openRegisterPage" onMouseEntered="#hoverSound" style="-fx-background-color: rgba(0,0,0,0);" text="지금 가입하세요!" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="logbtn" />
+               </styleClass>
+            </Button>
+            <Label layoutX="140.0" layoutY="270.0" prefHeight="25.0" prefWidth="197.0" text="아직 계정이 없으신가요?" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="364.0" mnemonicParsing="false" onMouseClicked="#openFindPasswordPage" onMouseEntered="#hoverSound" style="-fx-background-color: rgba(0,0,0,0);" text="비밀번호를 잃어버리셨나요?" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="logbtn" />
+               </styleClass>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="133.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#openFindIdPage" onMouseEntered="#hoverSound" style="-fx-background-color: rgba(0,0,0,0);" text="계정 ID를 잃어버리셨나요?" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="logbtn" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="477.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="E" textFill="#dd7128">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="572.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="T" textFill="#f9fc4c">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="656.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="R" textFill="#30ae38">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="806.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="S" textFill="#fa4dd5">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="741.0" layoutY="44.0" prefHeight="170.0" prefWidth="90.0" text="I" textFill="#60bdfc">
+         <font>
+            <Font name="Arial Bold" size="150.0" />
+         </font>
+         <effect>
+            <DropShadow radius="17.25" width="50.0" />
+         </effect>
+      </Label>
+      <Button layoutX="1196.0" layoutY="732.0" mnemonicParsing="false" onMouseClicked="#openOptionPage" onMouseEntered="#hoverSound" prefHeight="54.0" prefWidth="90.0" style="-fx-background-color: rgba(0,0,0,0.6); -fx-background-radius: 20px; -fx-border-color: rgb(0,0,0); -fx-border-radius: 20px;" text="OPTION" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="whitebtn" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

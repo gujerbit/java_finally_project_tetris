@@ -1,0 +1,30 @@
+.btn:hover{
+	-fx-text-fill : #F2CB61;
+}
+.regbtn{
+	-fx-text-fill : #ffffff;
+}
+.logbtn{
+	-fx-text-fill : #3f85e0;
+}
+#logout:hover{
+	-fx-text-fill : #CC3D3D;
+}
+.whitebtn{
+	-fx-text-fill : #ffffff;
+}
+
+
+.mainbtn{
+	-fx-text-fill: rgb(255,255,255);
+}
+
+.mainbtn:hover{
+ 	-fx-text-fill: rgb(220,220,220);
+}
+.redbtn:hover{
+	-fx-text-fill : #CC3D3D;
+}
+.gbtn:hover{
+	-fx-text-fill :  #30ae38;
+}
