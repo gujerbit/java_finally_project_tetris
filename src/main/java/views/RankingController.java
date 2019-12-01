@@ -42,7 +42,7 @@ public class RankingController extends MasterController {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "SELECT * FROM tetris_score ORDER BY 'score' DESC LIMIT 0, 10";
+		String sql = "SELECT * FROM tetris_score ORDER BY score DESC LIMIT 0, 10";
 
 		try {
 			pstmt = con.prepareStatement(sql);

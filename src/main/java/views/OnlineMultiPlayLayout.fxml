@@ -9,6 +9,7 @@
 <AnchorPane fx:id="onlineMultiPlayPage" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover; -fx-background-position: center center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.OnlineMultiPlayController">
    <children>
       <Canvas fx:id="copyCanvas" height="470.4" layoutX="1022.0" layoutY="322.0" width="200.0" />
+      <Pane layoutX="1019.0" layoutY="411.0" prefHeight="384.0" prefWidth="206.0" style="-fx-border-color: rgb(0,0,0); -fx-border-width: 5px; -fx-border-radius: 7px;" />
       <Pane layoutX="44.0" layoutY="118.0" prefHeight="300.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #353535, #ffffff); -fx-background-radius: 47px; -fx-border-width: 10px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 40px;">
          <children>
             <Label alignment="CENTER" layoutX="-16.0" layoutY="14.0" prefHeight="50.0" prefWidth="300.0" text="HOLD" textFill="WHITE">
@@ -72,7 +73,7 @@
             <Font name="Arial Bold" size="66.0" />
          </font>
       </Label>
-      <Label fx:id="readyLabel" alignment="CENTER" prefHeight="800.0" prefWidth="1300.0" textFill="WHITE">
+      <Label fx:id="readyLabel" alignment="CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="800.0" prefWidth="1300.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="96.0" />
          </font>
