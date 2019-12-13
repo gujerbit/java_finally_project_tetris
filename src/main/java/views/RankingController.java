@@ -34,6 +34,7 @@ public class RankingController extends MasterController {
 		list = FXCollections.observableArrayList();
 		topScoreList.setItems(list);
 		reloadTopScore();
+		catchDistinct();
 	}
 
 	public void reloadTopScore() {
@@ -42,7 +43,7 @@ public class RankingController extends MasterController {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "SELECT * FROM tetris_score ORDER BY score DESC LIMIT 0, 10";
+		String sql = "SELECT name, MAX(score) AS score FROM tetris_score GROUP BY name ORDER BY score DESC LIMIT 0, 10";
 
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -60,10 +61,13 @@ public class RankingController extends MasterController {
 			JDBCUtil.close(con);
 		}
 	}
+	
+	private void catchDistinct() {
+		
+	}
 
 	private ScoreVO makeScoreVO(ResultSet rs) throws Exception {
 		ScoreVO temp = new ScoreVO();
-		temp.setId(rs.getString("id"));
 		temp.setName(rs.getString("name"));
 		temp.setScore(rs.getInt("score"));
 

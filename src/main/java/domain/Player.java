@@ -30,6 +30,7 @@ public class Player {
 	private boolean byDown = false;
 
 	private boolean shape0 = false;
+	private boolean shape1 = false;
 	private boolean shape2 = false;
 	private boolean shape3 = false;
 	private boolean shape4 = false;
@@ -73,47 +74,47 @@ public class Player {
 		this.board = board;
 		// 작대기
 		shape[0] = new Point2D[2][];
-		shape[0][0] = getPointArray("0,-1:0,0:0,1:0,2");
-		shape[0][1] = getPointArray("-1,0:0,0:1,0:2,0");
+		shape[0][0] = getPointArray("0,-1:0,0:0,1:0,2"); // 3
+		shape[0][1] = getPointArray("-1,0:0,0:1,0:2,0"); // 1
 		// 네모
 		shape[1] = new Point2D[1][];
-		shape[1][0] = getPointArray("0,0:1,0:0,1:1,1");
+		shape[1][0] = getPointArray("0,0:1,0:0,1:1,1"); // 2
 		// ㄴ모양
 		shape[2] = new Point2D[4][];
-		shape[2][0] = getPointArray("0,-2:0,-1:0,0:1,0");
-		shape[2][1] = getPointArray("0,1:0,0:1,0:2,0");
-		shape[2][2] = getPointArray("-1,0:0,0:0,1:0,2");
-		shape[2][3] = getPointArray("-2,0:-1,0:0,0:0,-1");
+		shape[2][0] = getPointArray("0,-2:0,-1:0,0:1,0"); // 1
+		shape[2][1] = getPointArray("0,1:0,0:1,0:2,0"); // 2
+		shape[2][2] = getPointArray("-1,0:0,0:0,1:0,2"); // 3
+		shape[2][3] = getPointArray("-2,0:-1,0:0,0:0,-1"); // 1
 
 		// 역 ㄴ모양
 		shape[3] = new Point2D[4][];
-		shape[3][0] = getPointArray("0,-2:0,-1:0,0:-1,0");
-		shape[3][1] = getPointArray("0,-1:0,0:1,0:2,0");
-		shape[3][2] = getPointArray("0,0:1,0:0,1:0,2");
-		shape[3][3] = getPointArray("-2,0:-1,0:0,0:0,1");
+		shape[3][0] = getPointArray("0,-2:0,-1:0,0:-1,0"); // 1
+		shape[3][1] = getPointArray("0,-1:0,0:1,0:2,0"); // 1
+		shape[3][2] = getPointArray("0,0:1,0:0,1:0,2"); // 3
+		shape[3][3] = getPointArray("-2,0:-1,0:0,0:0,1"); // 2
 
 		shape[4] = new Point2D[2][];
-		shape[4][0] = getPointArray("0,0:-1,0:0,-1:1,-1");
-		shape[4][1] = getPointArray("0,0:0,-1:1,0:1,1");
+		shape[4][0] = getPointArray("0,0:-1,0:0,-1:1,-1"); // 1
+		shape[4][1] = getPointArray("0,0:0,-1:1,0:1,1"); // y2 x1
 		// 왼쪽무릎
 		shape[5] = new Point2D[2][];
-		shape[5][0] = getPointArray("0,0:0,-1:-1,-1:1,0");
-		shape[5][1] = getPointArray("0,0:1,0:1,-1:0,1");
+		shape[5][0] = getPointArray("0,0:0,-1:-1,-1:1,0"); // 1
+		shape[5][1] = getPointArray("0,0:1,0:1,-1:0,1"); // 2
 		// ㅗ 모양
 		shape[6] = new Point2D[4][];
-		shape[6][0] = getPointArray("0,0:0,-1:-1,0:1,0");
-		shape[6][1] = getPointArray("0,0:0,-1:1,0:0,1");
-		shape[6][2] = getPointArray("0,0:0,1:-1,0:1,0");
-		shape[6][3] = getPointArray("0,0:-1,0:0,-1:0,1");
+		shape[6][0] = getPointArray("0,0:0,-1:-1,0:1,0"); // 1
+		shape[6][1] = getPointArray("0,0:0,-1:1,0:0,1"); // 2
+		shape[6][2] = getPointArray("0,0:0,1:-1,0:1,0"); // 2
+		shape[6][3] = getPointArray("0,0:-1,0:0,-1:0,1"); // 2
 
 		// 색상 넣기
-		colorSet[0] = Color.rgb(0, 187, 208);
-		colorSet[1] = Color.rgb(232, 213, 0);
-		colorSet[2] = Color.rgb(217, 146, 0);
-		colorSet[3] = Color.rgb(0, 99, 196);
-		colorSet[4] = Color.rgb(0, 232, 67);
-		colorSet[5] = Color.rgb(219, 0, 0);
-		colorSet[6] = Color.rgb(180, 0, 217);
+		colorSet[0] = Color.PINK;
+		colorSet[1] = Color.YELLOW;
+		colorSet[2] = Color.GREEN;
+		colorSet[3] = Color.BLUE;
+		colorSet[4] = Color.VIOLET;
+		colorSet[5] = Color.ORANGE;
+		colorSet[6] = Color.SNOW;
 
 		reSet();
 		draw(false);
@@ -137,6 +138,8 @@ public class Player {
 		checkhold = true;
 		if (shape[current] == shape[0]) {
 			shape0 = true;
+		} else if (shape[current] == shape[1]) {
+			shape1 = true;
 		} else if (shape[current] == shape[2]) {
 			shape2 = true;
 		} else if (shape[current] == shape[3]) {
@@ -361,15 +364,15 @@ public class Player {
 //					rightPossible();
 //					System.out.println("그냥 회전");
 //				}
+				}
+				// upPossible();
+				rotate = rotate - 1 < 0 ? shape[current].length - 1 : rotate - 1;
 			}
-			// upPossible();
-			rotate = rotate - 1 < 0 ? shape[current].length - 1 : rotate - 1;
 		}
-	}
 
-	getPrePosition();
+		getPrePosition();
 
-	draw(false);
+		draw(false);
 	}
 
 	public void copyMove(int dx, int dy, int rot, int current) {
@@ -637,13 +640,20 @@ public class Player {
 		nextBlock = rnd.nextInt(shape.length);
 		nextColor = nextBlock;
 		shape0 = false;
+		shape1 = false;
 		shape2 = false;
 		shape3 = false;
 		shape4 = false;
 		shape5 = false;
 		shape6 = false;
+		
+		boolean one = false;
+		boolean two = false;
+		
 		if (shape[current] == shape[0]) {
 			shape0 = true;
+		} else if (shape[current] == shape[1]) {
+			shape1 = true;
 		} else if (shape[current] == shape[2]) {
 			shape2 = true;
 		} else if (shape[current] == shape[3]) {
@@ -655,15 +665,25 @@ public class Player {
 		} else if (shape[current] == shape[6]) {
 			shape6 = true;
 		}
+		
+		for(int i = 0; i < 10; i++) {
+			if(MainApp.app.offGame.oneBoard[3][i].getFill()) {
+				one = true;
+				two = false;
+			} else if (MainApp.app.offGame.twoBoard[3][i].getFill()) {
+				two = true;
+				one = false;
+			}
+		}
 
 		if (!checkPossible(x, y)) {
 			draw(true);
 			if (MainApp.app.game.ready == 2) {
 				MainApp.app.game.setGameOver();
 			} else if (MainApp.app.offGame.ready == 2) {
-				if (!checkOne()) {
+				if (!checkOne() && one) {
 					MainApp.app.offGame.setOneGameOver();
-				} else if (!checkTwo()) {
+				} else if (!checkTwo() && two) {
 					MainApp.app.offGame.setTwoGameOver();
 				}
 			} else if (MainApp.app.onGame.ready == 2) {
@@ -675,6 +695,7 @@ public class Player {
 		if (holdCnt != 0) {
 			holdCnt = 1;
 		}
+		System.out.println(y);
 	}
 
 	private boolean checkPossible(int x, int y) {
@@ -718,16 +739,21 @@ public class Player {
 		}
 
 		if (!empty) {
-			if (shape0) {
-				if (MainApp.app.offGame.oneBoard[y + 4][x].getFill()) {
-					return false;
-				}
-			} else if (shape2 || shape3) {
+			if (shape0 && rotate == 0 || shape2 && rotate == 2 || shape3 && rotate == 2) {
 				if (MainApp.app.offGame.oneBoard[y + 3][x].getFill()) {
 					return false;
 				}
-			} else {
+			} else if (shape1 || shape2 && rotate == 1 || shape3 && rotate == 3 || shape5 && rotate == 1
+					|| shape6 && rotate != 0) {
 				if (MainApp.app.offGame.oneBoard[y + 2][x].getFill()) {
+					return false;
+				}
+			} else if (shape4 && rotate == 1) {
+				if (MainApp.app.offGame.oneBoard[y + 2][x + 1].getFill()) {
+					return false;
+				}
+			} else {
+				if (MainApp.app.offGame.oneBoard[y + 1][x].getFill()) {
 					return false;
 				}
 			}
@@ -744,16 +770,21 @@ public class Player {
 		}
 
 		if (!empty) {
-			if (shape0) {
-				if (MainApp.app.offGame.twoBoard[y + 4][x].getFill()) {
-					return false;
-				}
-			} else if (shape2 || shape3) {
+			if (shape0 && rotate == 0 || shape2 && rotate == 2 || shape3 && rotate == 2) {
 				if (MainApp.app.offGame.twoBoard[y + 3][x].getFill()) {
 					return false;
 				}
-			} else {
+			} else if (shape1 || shape2 && rotate == 1 || shape3 && rotate == 3 || shape5 && rotate == 1
+					|| shape6 && rotate != 0) {
 				if (MainApp.app.offGame.twoBoard[y + 2][x].getFill()) {
+					return false;
+				}
+			} else if (shape4 && rotate == 1) {
+				if (MainApp.app.offGame.twoBoard[y + 2][x + 1].getFill()) {
+					return false;
+				}
+			} else {
+				if (MainApp.app.offGame.twoBoard[y + 1][x].getFill()) {
 					return false;
 				}
 			}

@@ -26,6 +26,6 @@ public class ScoreVO {
 	
 	@Override
 	public String toString() {
-		return "ranking : " + id + " / " + "name : " + name + " / " + "score : " + score;
+		return "name : " + name + " / " + "score : " + score;
 	}
 }

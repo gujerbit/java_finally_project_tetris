@@ -41,7 +41,7 @@ public class Block {
 			gc.setFill(color.brighter());
 			gc.fillRoundRect(x, y, size, size, 4, 4);
 			
-			gc.setFill(color.brighter().brighter());
+			gc.setFill(color.GRAY);
 			gc.fillRoundRect(
 				x + borderSize, y + borderSize,
 				size - 2* borderSize, size - 2*borderSize,
