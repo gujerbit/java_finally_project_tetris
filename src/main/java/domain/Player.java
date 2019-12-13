@@ -358,14 +358,7 @@ public class Player {
 			if (rot) {
 				if (bxLeft == true || bxRight == true) {
 					getTurnBlock();
-				} else {
-//					if (!possibleError()) {
-//						leftPossible();
-//					rightPossible();
-//					System.out.println("그냥 회전");
-//				}
 				}
-				// upPossible();
 				rotate = rotate - 1 < 0 ? shape[current].length - 1 : rotate - 1;
 			}
 		}
@@ -413,6 +406,9 @@ public class Player {
 				MainApp.app.onGame.checkLineStatus();
 			}
 			ok = true;
+			if(nextBlock == current) {
+				nextBlock();
+			}
 			getNextBlock();
 			draw(false); // 다음블럭 뽑은것을 그려주는거야
 			return true;
@@ -501,85 +497,6 @@ public class Player {
 				rotate += 1;
 			}
 		}
-	}
-
-	public void leftPossible() {
-		if (!checkPossible(x, y)) {
-			if (!checkPossible(x - 1, y)) {
-				if (!checkPossible(x - 2, y)) {
-
-				} else if (checkPossible(x - 2, y) && !possibleError()) {
-					x -= 2;
-					rotate += 1;
-				} else if (checkPossible(x -= 2, y) && possibleError()) {
-					x += 2;
-					rotate -= 1;
-				}
-			} else if (!checkPossible(x - 1, y) && !possibleError()) {
-				x -= 1;
-				rotate += 1;
-			} else if (checkPossible(x - 1, y) && possibleError()) {
-				x += 1;
-				rotate -= 1;
-			}
-		}
-	}
-
-	public void rightPossible() {
-		if (!checkPossible(x, y)) {
-			if (!checkPossible(x + 1, y)) {
-				if (!checkPossible(x + 2, y)) {
-//					if(!checkPossible(x+3, y) && shape0) {
-//						x += 3;
-//						rotate += 1;
-//					}
-				} else if (checkPossible(x + 2, y) && !possibleError()) {
-					x += 2;
-					rotate += 1;
-				} else if (checkPossible(x + 2, y) && possibleError()) {
-					x -= 2;
-					rotate -= 1;
-				}
-			} else if (checkPossible(x + 1, y) && !possibleError()) {
-				x += 1;
-				rotate += 1;
-			} else if (checkPossible(x + 1, y) && possibleError()) {
-				x -= 1;
-				rotate -= 1;
-			}
-		}
-	}
-
-	public void upPossible() {
-		if (!checkPossible(x, y)) {
-			if (!checkPossible(x, y - 1)) {
-				if (!checkPossible(x, y - 2)) {
-					if (!checkPossible(x, y - 3)) {
-
-					} else {
-						y -= 3;
-						rotate += 1;
-					}
-				} else {
-					y -= 2;
-					rotate += 1;
-				}
-			} else {
-				y -= 1;
-				rotate += 1;
-			}
-		}
-	}
-
-	public boolean possibleError() {
-		leftPossible();
-		rightPossible();
-		upPossible();
-
-		if (!checkPossible(x, y)) {
-			return true;
-		}
-		return false;
 	}
 
 	public void hold() {
@@ -690,12 +607,20 @@ public class Player {
 				MainApp.app.onGame.setGameOver();
 			}
 		}
+		
 		getPrePosition();
 
 		if (holdCnt != 0) {
 			holdCnt = 1;
 		}
-		System.out.println(y);
+	}
+	
+	private void nextBlock() {
+		Random rnd = new Random();
+		while(nextBlock != current) {
+			int r = rnd.nextInt(shape.length);
+			nextBlock = r;
+		}
 	}
 
 	private boolean checkPossible(int x, int y) {
