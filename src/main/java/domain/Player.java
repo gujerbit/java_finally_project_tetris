@@ -358,6 +358,8 @@ public class Player {
 			if (rot) {
 				if (bxLeft == true || bxRight == true) {
 					getTurnBlock();
+				} else {
+					//turnPossible();
 				}
 				rotate = rotate - 1 < 0 ? shape[current].length - 1 : rotate - 1;
 			}
@@ -496,6 +498,73 @@ public class Player {
 		}
 	}
 
+	private boolean leftPossible() {
+		if(board[y][x-1].getFill() || x-1 == -1) {
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean rightPossible() {
+		if(board[y][x+1].getFill() || x+1 == 10) {
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean addLeftPossible() {
+		if(board[y][x-2].getFill() || x-2 == -1) {
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean addRightPossible() {
+		if(board[y][x+2].getFill() || x+2 == 10) {
+			return false;
+		}
+		return true;
+	}
+	
+	private void turnPossible() {
+		boolean addLeft = false;
+		boolean addRight = false;
+		
+		if(leftPossible()) {
+			if(addLeftPossible()) {
+				x -= 1;
+				addLeft = true;
+			}
+			x -= 1;
+			rotate += 1;
+			if(!checkPossible(x,y)) {
+				rotate -= 1;
+				if(addLeft) {
+					x += 1;
+					addLeft = false;
+				}
+				x += 1;
+			}
+		}
+		
+		if(rightPossible()) {
+			if(addRightPossible()) {
+				x += 1;
+				addRight = true;
+			}
+			x += 1;
+			rotate += 1;
+			if(!checkPossible(x,y)) {
+				rotate -= 1;
+				if(addRight) {
+					x -= 1;
+					addRight = false;
+				}
+				x -= 1;
+			}
+		}
+	}
+	
 	public void hold() {
 		// holdCnt == 0 처음 시작
 		// holdCnt == 1 홀드
