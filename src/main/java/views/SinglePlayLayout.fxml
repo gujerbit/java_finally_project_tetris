@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="singlePlayPage" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover; -fx-background-position: center center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.SinglePlayController">
+<AnchorPane fx:id="singlePlayPage" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-image: url(/resources/tetris.jpg); -fx-background-size: cover; -fx-background-position: center center;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.SinglePlayController">
 	<children>
 		<Canvas height="300.0" layoutX="950.0" layoutY="150.0" width="300.0" />
 		<Pane layoutX="44.0" layoutY="118.0" prefHeight="300.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #353535, #ffffff); -fx-background-radius: 47px; -fx-border-width: 10px; -fx-border-color: rgb(255,255,255); -fx-border-radius: 40px;">
@@ -60,7 +60,7 @@
 		</Pane>
 		<Canvas fx:id="canvas" height="697.0" layoutX="500.0" layoutY="-10.0" width="292.0" />
 		<Pane layoutX="495.0" layoutY="108.0" prefHeight="581.0" prefWidth="301.0" style="-fx-border-color: rgb(0,0,0); -fx-border-width: 8px; -fx-border-radius: 10px;" />
-		<Label alignment="CENTER" opacity="0.0" prefHeight="108.0" prefWidth="1300.0" style="-fx-background-color: rgb(255,255,255);" text="SINGLE PLAY">
+		<Label alignment="CENTER" prefHeight="108.0" prefWidth="1300.0" style="-fx-background-color: rgb(255,255,255);" text="SINGLE PLAY">
 			<font>
 				<Font name="Arial Bold" size="50.0" />
 			</font>

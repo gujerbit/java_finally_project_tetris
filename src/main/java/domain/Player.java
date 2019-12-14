@@ -406,9 +406,6 @@ public class Player {
 				MainApp.app.onGame.checkLineStatus();
 			}
 			ok = true;
-			if(nextBlock == current) {
-				nextBlock();
-			}
 			getNextBlock();
 			draw(false); // 다음블럭 뽑은것을 그려주는거야
 			return true;
@@ -554,7 +551,12 @@ public class Player {
 		checkhold = true;
 		current = nextBlock;
 		nowColor = current;
-		nextBlock = rnd.nextInt(shape.length);
+		
+		while(nextBlock == current) {
+			Random rnd = new Random();
+			nextBlock = rnd.nextInt(shape.length);
+		}
+		
 		nextColor = nextBlock;
 		shape0 = false;
 		shape1 = false;
@@ -612,14 +614,6 @@ public class Player {
 
 		if (holdCnt != 0) {
 			holdCnt = 1;
-		}
-	}
-	
-	private void nextBlock() {
-		Random rnd = new Random();
-		while(nextBlock != current) {
-			int r = rnd.nextInt(shape.length);
-			nextBlock = r;
 		}
 	}
 

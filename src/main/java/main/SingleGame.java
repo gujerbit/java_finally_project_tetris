@@ -197,6 +197,7 @@ public class SingleGame {
 
 	// 라인이 꽉 찼는지를 검사하는 매서드
 	public void checkLineStatus() {
+		int add = 0;
 		for (int i = 23; i >= 0; i--) {
 			boolean clear = true;
 			for (int j = 0; j < 10; j++) {
@@ -208,6 +209,14 @@ public class SingleGame {
 
 			if (clear) { // 해당 줄이 꽉 찼다면
 				score++;
+				add++;
+				
+				if(add != 1 && add % 2 == 0){
+					score += add / 2;
+				} else if (add != 1 && add % 2 != 0) {
+					score += add / 2 + 1;
+				}
+				
 				scoreLabel.setText(score.toString());
 				for (int j = 0; j < 10; j++) {
 					board[i][j].setData(false, Color.WHITE);
