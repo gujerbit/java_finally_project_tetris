@@ -108,13 +108,13 @@ public class Player {
 		shape[6][3] = getPointArray("0,0:-1,0:0,-1:0,1"); // 2
 
 		// 색상 넣기
-		colorSet[0] = Color.PINK;
-		colorSet[1] = Color.YELLOW;
-		colorSet[2] = Color.GREEN;
-		colorSet[3] = Color.BLUE;
-		colorSet[4] = Color.VIOLET;
-		colorSet[5] = Color.ORANGE;
-		colorSet[6] = Color.SNOW;
+		colorSet[0] = Color.rgb(0, 187, 208);
+		colorSet[1] = Color.rgb(232, 213, 0);
+		colorSet[2] = Color.rgb(217, 146, 0);
+		colorSet[3] = Color.rgb(0, 99, 196);
+		colorSet[4] = Color.rgb(0, 232, 67);
+		colorSet[5] = Color.rgb(219, 0, 0);
+		colorSet[6] = Color.rgb(180, 0, 217);
 
 		reSet();
 		draw(false);
