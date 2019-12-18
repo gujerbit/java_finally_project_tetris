@@ -396,6 +396,7 @@ public class SingleGame {
 			opc.resetGameover();
 		}
 		RankingController rck = (RankingController)MainApp.app.getController("ranking");
+		rck.reloadTopScore();
 		rck.record();
 	}
 }

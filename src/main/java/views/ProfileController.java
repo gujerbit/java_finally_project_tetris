@@ -186,6 +186,7 @@ public class ProfileController extends MasterController {
 		ResultSet rs = null;
 		
 		String sql = "UPDATE tetris_users SET name = ? WHERE id = ?";
+		String oSql = "UPDATE tetris_score SET name = ?";
 		String sqlExist = "SELECT * FROM tetris_users WHERE name = ?";
 
 		try {
@@ -212,6 +213,16 @@ public class ProfileController extends MasterController {
 
 			Util.showAlert("성공!", "성공적으로 닉네임을 변경하였습니다!", AlertType.INFORMATION);
 
+			JDBCUtil.close(pstmt);
+			
+			pstmt = con.prepareStatement(oSql);
+			pstmt.setString(1, name);
+			
+			pstmt.executeUpdate();
+			
+			RankingController rc = (RankingController)MainApp.app.getController("ranking");
+			rc.reloadTopScore();
+			
 			closeName();
 			MainController mc = (MainController) MainApp.app.getController("main");
 			mc.setProfile(name, checkId);

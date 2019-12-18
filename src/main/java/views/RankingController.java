@@ -34,7 +34,6 @@ public class RankingController extends MasterController {
 		list = FXCollections.observableArrayList();
 		topScoreList.setItems(list);
 		reloadTopScore();
-		catchDistinct();
 	}
 
 	public void reloadTopScore() {
@@ -62,8 +61,25 @@ public class RankingController extends MasterController {
 		}
 	}
 	
-	private void catchDistinct() {
+	public void rename() {
+		Connection con = JDBCUtil.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
+		String sql = "UPDATE tetris_score SET name = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("DB error");
+		} finally {
+			JDBCUtil.close(rs);
+			JDBCUtil.close(pstmt);
+			JDBCUtil.close(con);
+		}
 	}
 
 	private ScoreVO makeScoreVO(ResultSet rs) throws Exception {
